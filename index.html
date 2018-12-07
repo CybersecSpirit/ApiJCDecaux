@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name ="description" content ="Réservez votre vélo à Marseille">
+    <link rel="stylesheet" href="style.css">
+    <title>Reserver un vélo à Marseille</title>
+    <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwyIcTOg59ZQRhHoynZUvgHDOeo_qlFfs&callback=MyMap.initMap"></script>
+    <script src="ajax.js"></script>
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+
+    <header class="flex">
+				<img src="images/Logo.png" alt="logo leVelo" />
+				<div>
+					<H1>Carte interactive LeVélo</H1>
+					<strong>Réservez votre vélo à Marseille en ligne !</strong>
+				</div>
+		</header>
+
+    <section id="diaporama">
+      <div id="controle">
+        <div id ="fleche-gauche" class="controle fleche-gauche" onclick="diapoObj.flecheGauche()"></div>
+        <div id ="fleche-droite" class="controle fleche-droite" onclick="diapoObj.flecheDroite()"></div>
+        <div id="pause" class="controle pause" onclick="diapoObj.pauseDiapo()"></div>
+      </div>
+      <figure id="image">
+        <img id="photo" src="images/jcd01.png" alt="diapo">
+        <figcaption>
+          <h1 id="titre">Bienvenue</h1>
+          <p id="presentation">Bienvenue sur le site de réservation de vélo à Marseille</p>
+        </figcaption>
+      </figure>
+    </section>
+
+
+    <section class="app_map">
+		<header>
+			<h2>Application</h2>
+		</header>
+		<article>
+			<div id="map">
+			</div>
+
+
+			<div id="reservation">
+				<h2 id="name"></h2>
+					<p id="address"></p>
+					<div class="info">
+						<div>
+							<p id="available_bikes"></p>
+							<i class="fas fa-bicycle fa-2x"></i>
+						</div>
+						<div>
+							<p id="available_bike_stands"></p>
+							<i class="fas fa-parking fa-2x"></i>
+						</div>
+					</div>
+				<form id="formulaire">
+					<label for="nom">Nom</label>
+					<input type="text" id="nom" name="nom" placeholder="Nom"/>
+					<br />
+					<label for="prenom">Prénom</label>
+					<input type="text" id="prenom" name="prenom" placeholder="Prénom" />
+					<br />
+					<label for="signature">Signature</label>
+					<canvas id="signature"  onmousemove="Dessin.cursorCoord(event)" onmousedown="Dessin.initDrawing(event)" onmouseup="Dessin.stopDrawing()"></canvas>
+					<input type="button" value="Valider" onclick="Storage.saveForm()"><input type="button" value="Effacer" onclick="Dessin.clearDrawing()" /><input type="button" value="Annuler" onclick="Cross.fermerDiv()" />
+				</form>
+			</div>
+		</article>
+	</section>
+	<footer>
+		<div id="content_info_reservation">
+			<h2>Réservation</h2>
+			<p id="info_reservation"></p>
+		</div>
+	</footer>
+
+
+    <script src="slider.js"></script>
+	  <script src="canvas.js"></script>
+	  <script src="storage.js"></script>
+	  <script src="minuteur.js"></script>
+
+    <p id="ancre"></p>
+  </body>
+</html>
