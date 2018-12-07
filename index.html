@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Reserver un vélo à Marseille</title>
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwyIcTOg59ZQRhHoynZUvgHDOeo_qlFfs&callback=MyMap.initMap"></script>
     <script src="ajax.js"></script>
     <script src="main.js"></script>
@@ -62,14 +62,14 @@
 					</div>
 				<form id="formulaire">
 					<label for="nom">Nom</label>
-					<input type="text" id="nom" name="nom" placeholder="Nom"/>
+					<input type="text" id="nom" name="nom" placeholder="Nom" required/>
 					<br />
 					<label for="prenom">Prénom</label>
-					<input type="text" id="prenom" name="prenom" placeholder="Prénom" />
+					<input type="text" id="prenom" name="prenom" placeholder="Prénom" required />
 					<br />
 					<label for="signature">Signature</label>
-					<canvas id="signature"  onmousemove="Dessin.cursorCoord(event)" onmousedown="Dessin.initDrawing(event)" onmouseup="Dessin.stopDrawing()"></canvas>
-					<input type="button" value="Valider" onclick="Storage.saveForm()"><input type="button" value="Effacer" onclick="Dessin.clearDrawing()" /><input type="button" value="Annuler" onclick="Cross.fermerDiv()" />
+					<canvas id="signature"  onmousemove="Dessin.cursorCoord(event)" onmousedown="Dessin.initDrawing(event)" onmouseup="Dessin.stopDrawing()" ontouchstart="Dessin.initDrawing(event)" ontouchmove="Dessin.cursorCoord(event)" ontouchend="Dessin.stopDrawing()" ></canvas>
+					<input id="validation" type="submit" value="Valider" onclick="Storage.saveForm()"><input type="button" value="Effacer" onclick="Dessin.clearDrawing()" /><input type="button" value="Annuler" onclick="Cross.fermerDiv()" />
 				</form>
 			</div>
 		</article>

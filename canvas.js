@@ -9,8 +9,9 @@ var Dessin = {
 	cursorCoord : function(event) {
 
 		var coord = document.getElementById("signature").getBoundingClientRect();
-		var coord_X = event.clientX - coord.left;
-		var coord_Y = event.clientY - coord.top;
+		var coord_X = event.layerX;
+		var coord_Y = event.layerY;
+
 
 		Dessin.drawing(coord_X, coord_Y);
 	},

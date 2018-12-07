@@ -5,6 +5,7 @@ var Stations = {
 	bike_stands : null,
 	available_bikes : null,
 	available_bike_stands : null,
+  status : null,
 
 	// Intégration des données de la station
 	remplirStation : function(donneesStation) {
@@ -17,15 +18,20 @@ var Stations = {
 		this.address = donneesStation.address;
 		this.position = donneesStation.position;
 		this.bike_stands = donneesStation.bike_stands;
-
 		this.available_bike_stands = donneesStation.available_bike_stands;
+    this.status = donneesStation.status;
 	},
 
 	insertionDonneesStation : function() {
         // Insertion des données dans la page
     document.getElementById("name").innerHTML = this.name;
 		document.getElementById("address").innerHTML = this.address;
-		document.getElementById("available_bikes").innerHTML = this.available_bikes;
+    if (this.status == "OPEN"){
+      document.getElementById("available_bikes").innerHTML = this.available_bikes;
+    } else {
+      document.getElementById("available_bikes").innerHTML = "FERMÉ";
+    }
+
 		document.getElementById("available_bike_stands").innerHTML = this.available_bike_stands;
 
 	},
@@ -84,7 +90,9 @@ var MyMap = {
 				marker.addListener('click', function() {
 					Stations.remplirStation(infoStation);
 					Stations.insertionDonneesStation();
+
 					$("#reservation").animate({right: "0"}, "fast");
+
 				});
 			});
 		});
