@@ -11,6 +11,7 @@ var Dessin = {
 		var coord = document.getElementById("signature").getBoundingClientRect();
 		var coord_X = event.layerX;
 		var coord_Y = event.layerY;
+    console.log(event);
 
 
 		Dessin.drawing(coord_X, coord_Y);

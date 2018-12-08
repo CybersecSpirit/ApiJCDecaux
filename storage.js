@@ -47,7 +47,11 @@ var Storage = {
       $('#info_reservation').html(sessionStorage.etatReservation);
       $("#content_info_reservation").slideDown("slow");
     }
-	}
+	},
+
+  close : function() {
+    $('#reservation').animate({right: '-100%'}, 'fast');
+  },
 };
 
 

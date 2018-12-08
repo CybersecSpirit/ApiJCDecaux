@@ -203,7 +203,7 @@ figcaption > p {
 
 
 .info {
-    width: 50%;
+  width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 5%;
@@ -292,6 +292,14 @@ footer h2 {
   #controle .pause {
     margin-top:445px;
   }
+  .app_map article #reservation {
+    width:100%;
+  }
+  form {
+    width:40%;
+    margin-left:auto;
+    margin-right:auto;
+  }
 
 }
 
@@ -305,5 +313,13 @@ footer h2 {
   }
   #controle .pause {
     margin-top:445px;
+  }
+  .app_map article #reservation {
+    width:100%;
+  }
+  form {
+    width:40%;
+    margin-left:auto;
+    margin-right:auto;
   }
 }
