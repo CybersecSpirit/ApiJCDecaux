@@ -9,9 +9,11 @@ var Storage = {
     if (Dessin.canvasVide == true){
       alert("Signez SVP !");
     } else {
-		    var nom = document.getElementById("nom").textContent;
-		    var prenom = document.getElementById("prenom").textContent;
+
+		    var nom = document.getElementById("nom").value;
+		    var prenom = document.getElementById("prenom").value;
         var nbVelo = Number(document.getElementById("available_bikes").textContent);
+
 
         if (String(nom) && String(prenom) && nbVelo > 0 ){
           this.nom = document.getElementById("nom").value;
@@ -29,8 +31,9 @@ var Storage = {
   		    sessionStorage.station = this.station;
           document.getElementById("info_reservation").innerHTML = 'Vélo réservé à la station '+ sessionStorage.station + ' au nom de ' + localStorage.prenom + ' ' + localStorage.nom + '.<br /> <p>Votre réservation prendra fin dans <span id="minuteCompteur">20</span>:<span id="secondeCompteur">00</span> minutes.</p>';
           $("#content_info_reservation").slideDown("slow");
+          sessionStorage.etatReservation = $('#info_reservation').html();
+          e.preventDefault();
         } else {
-
           alert('Réservation Impossible');
         }
 
@@ -50,7 +53,7 @@ var Storage = {
 	},
 
   close : function() {
-    $('#reservation').animate({right: '-100%'}, 'fast');
+    $('#reservation').animate({right: '-140%'}, 'fast');
   },
 };
 

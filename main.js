@@ -99,4 +99,4 @@ var MyMap = {
 	}
 };
 
-MyMap.initStations("https://api.jcdecaux.com/vls/v1/stations?contract=Marseille&apiKey=55a369c543bf073a953c742dd43af857265b8e75");
+$(document).ready(MyMap.initStations("https://api.jcdecaux.com/vls/v1/stations?contract=Marseille&apiKey=55a369c543bf073a953c742dd43af857265b8e75"));

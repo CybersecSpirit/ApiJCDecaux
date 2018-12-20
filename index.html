@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name ="description" content ="Réservez votre vélo à Marseille">
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Reserver un vélo à Marseille</title>
     <script src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwyIcTOg59ZQRhHoynZUvgHDOeo_qlFfs&callback=MyMap.initMap"></script>
     <script src="ajax.js"></script>
 
   </head>
@@ -69,7 +69,7 @@
 					<br />
 					<label for="signature">Signature</label>
 					<canvas id="signature"  onmousemove="Dessin.cursorCoord(event)" onmousedown="Dessin.initDrawing(event)" onmouseup="Dessin.stopDrawing()" ontouchstart="Dessin.initDrawing(event)" ontouchmove="Dessin.cursorCoord(event)" ontouchend="Dessin.stopDrawing()" ></canvas>
-					<input id="validation" type="submit" value="Valider" onclick="Storage.saveForm()"><input type="button" value="Effacer" onclick="Dessin.clearDrawing()" /><input type="button" value="Annuler" onclick="Storage.close()" />
+					<input id="validation" type="submit" value="Valider" onclick="Storage.saveForm()" ><input type="button" value="Effacer" onclick="Dessin.clearDrawing()" /><input type="button" value="Annuler" onclick="Storage.close()" />
 				</form>
 			</div>
 		</article>
@@ -87,6 +87,7 @@
 	  <script src="storage.js"></script>
 	  <script src="minuteur.js"></script>
     <script src="main.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwyIcTOg59ZQRhHoynZUvgHDOeo_qlFfs&callback=MyMap.initMap"></script>
     <p id="ancre"></p>
   </body>
 </html>
