@@ -9,17 +9,24 @@ var Dessin = {
 	cursorCoord : function(event) {
     event.preventDefault();
 
+		
+
 		var coord = document.getElementById("signature").getBoundingClientRect();
 		var coord_X;
 		var coord_Y;
     if (event.changedTouches && event.changedTouches[0]){
-      coord_X = event.changedTouches[0].clientX - 29;
-      coord_Y = event.changedTouches[0].clientY - 392;
+			var offsety = event.target.offsetTop + event.target.offsetParent.offsetParent.offsetTop + event.target.offsetParent.offsetParent.offsetParent.offsetTop || 0;
+			var offsetx = event.target.offsetLeft || 0;
+
+
+			coord_X = event.changedTouches[0].pageX - offsetx ;
+			coord_Y = event.changedTouches[0].pageY - offsety;
+
     }
-    else {
-      coord_X = event.layerX;
-      coord_Y = event.layerY;
-    }
+    else if (event.offsetX || 0 == event.offsetX) {
+			coord_X = event.offsetX;
+			coord_Y = event.offsetY;
+		}
 
 
 
